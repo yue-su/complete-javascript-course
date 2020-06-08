@@ -29,20 +29,34 @@ console.log(firstName);
 // years[years.length - 1] = 3500;
 // console.log(years);
 
+/*****************************
+* CODING CHALLENGE 3
+*/
 
-let bills = new Array(124, 48, 268);
+ let bills = new Array(124, 48, 268);
 
-function tips(bill) {
-    if (bill < 50) {
-        console.log (`The tips is ` + Math.floor(bill * 0.2));
-    } else if (bill >= 50 && bill <= 200) {
-        console.log (`The tips is ` + bill * 0.15);
-    } else {
-        console.log (`The tips is ` + bill * 0.10);
-    }
+ function tips(bill) {
+     let percentage;
+     if (bill < 50) {
+         percentage = .2;
+     } else if (bill >= 50 && bill <= 200) {
+         percentage = .15;
+     } else {
+         percentage = .1;
+     }
+
+     return percentage * bill;
 }
 
-tips(33);
-tips(73);
-tips(222);
+let tipsTopay = [tips(bills[0]),tips(bills[1]),tips(bills[2])];
+console.log(tipsTopay);
+
+let totalTopay = [
+    bills[0] + tipsTopay[0],
+    bills[1] + tipsTopay[1],
+    bills[2] + tipsTopay[2],
+];
+console.log(totalTopay);
+
+
 
