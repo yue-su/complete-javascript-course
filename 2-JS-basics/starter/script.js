@@ -1,5 +1,5 @@
-let firstName = 'yue';
-console.log(firstName);
+// let firstName = 'yue';
+// console.log(firstName);
 
 
 
@@ -31,7 +31,7 @@ console.log(firstName);
 
 /*****************************
 * CODING CHALLENGE 3
-*/
+
 
  let bills = new Array(124, 48, 268);
 
@@ -58,5 +58,53 @@ let totalTopay = [
 ];
 console.log(totalTopay);
 
+*/
+
+/*****************************
+* Objects and methods
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+};
+
+console.log(john.firstName);
+console.log(john['lastName']);
+var x = 'birthYear';
+console.log(john[x]);
+var y = 'job';
+console.log(john[y] + john[x]);
+
+*/
+
+/*****************************
+* CODING CHALLENGE 4
+*/
+
+let Mark = {
+    name: 'Mark',
+    mass: 79,
+    height: 1.69,
+    calcBmi: function() {
+        this.bmi = this.mass / this.height^2;
+        return this.bmi;
+    }
+};
+
+let John = {
+    name: 'John',
+    mass: 92,
+    height: 1.95,
+    calcBmi: function() {
+        this.bmi = this.mass / this.height^2;
+        return this.bmi;
+    }
+}
+
+console.log(Mark.calcBmi() > John.calcBmi());
 
 
