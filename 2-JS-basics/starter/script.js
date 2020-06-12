@@ -83,12 +83,12 @@ console.log(john[y] + john[x]);
 
 /*****************************
 * CODING CHALLENGE 4
-*/
+
 
 let Mark = {
     name: 'Mark',
-    mass: 79,
-    height: 1.69,
+    mass: 110,
+    height: 1.99,
     calcBmi: function() {
         this.bmi = this.mass / this.height^2;
         return this.bmi;
@@ -107,4 +107,69 @@ let John = {
 
 console.log(Mark.calcBmi() > John.calcBmi());
 
+if (John.calcBmi() > Mark.calcBmi()) {
+    console.log(John.name + ` has a higher BMI of ` + John.bmi);
+} else if (John.calcBmi() < Mark.calcBmi()){
+    console.log(Mark.name + ` has a higher BMI of ` + Mark.bmi);
+} else {
+    console.log(`Same bmi`);
+}
 
+*/
+
+
+/*****************************
+* CODING CHALLENGE 5
+*/
+
+
+const john = {
+    fullName: 'john Smith',
+    bills: [124, 48, 268, 180, 42],
+    calcTips: function (){
+        this.tips = [];
+        this.total = [];
+        for (let i=0; i < this.bills.length; i++) {
+            let percentage;
+            let bill = this.bills[i];
+            if (bill < 50) { percentage = .2}
+            else if (bill>=50 && bill<=200) {percentage= .15}
+            else {percentage = .1}
+            this.tips.push(bill*percentage);
+            this.total.push(bill + bill * percentage); 
+        }       
+    }   
+}
+
+const mark = {
+    fullName: 'Mark Smith',
+    bills: [77, 375, 110, 45],
+    calcTips: function (){
+        this.tips = [];
+        this.total = [];
+        for (let i=0; i < this.bills.length; i++) {
+            let percentage;
+            let bill = this.bills[i];
+            if (bill < 100) { percentage = .2}
+            else if (bill>=100 && bill<=300) {percentage= .1}
+            else {percentage = .25}
+            this.tips.push(bill*percentage);
+            this.total.push(bill + bill * percentage); 
+        }      
+    }   
+}
+
+const average = function(arr) {
+    let tipsTotal = 0;    // need to declare with a value;
+    let averageTips = 0;
+    for(let i=0; i<arr.tips.length; i++) {
+        tipsTotal = tipsTotal + arr.tips[i];
+    }
+    averageTips = tipsTotal / arr.tips.length;
+    return averageTips;
+}
+
+john.calcTips();
+mark.calcTips();
+console.log(average(mark));
+console.log(average(john));
